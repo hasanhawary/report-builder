@@ -1,20 +1,3 @@
-تمام ✅ خليني أجهزلك **README.md كامل** (ready-to-use file) مع كل الأقسام:
-
-* badges
-* features
-* installation
-* configuration
-* usage (backend examples)
-* response examples
-* frontend integration (Vue + React)
-* contributing
-* license
-
----
-
-# 📄 Full `README.md`
-
-````markdown
 # Laravel Report Builder
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/hasanhawary/report-builder.svg?style=flat-square)](https://packagist.org/packages/hasanhawary/report-builder)
@@ -289,7 +272,7 @@ import { ref, onMounted } from "vue";
 const chartOptions = ref(null);
 
 onMounted(async () => {
-  const response = await fetch("/reports/users");
+  const response = await fetch("reports?page=users");
   const data = await response.json();
   chartOptions.value = data.report.charts[0].data[data.report.charts[0].type];
 });
@@ -300,29 +283,6 @@ onMounted(async () => {
     <highcharts :options="chartOptions" v-if="chartOptions" />
   </div>
 </template>
-```
-
----
-
-### Vue 3 + Dynamic Chart (Simple)
-
-```vue
-<template>
-  <div>
-    <dynamic-chart
-      v-if="chart?.data[chart.type].series?.length"
-      :chartOptions="JSON.stringify(chart.data[chart.type])"
-    ></dynamic-chart>
-  </div>
-</template>
-
-<script setup>
-import { computed } from "vue";
-
-const props = defineProps({ chartOptions: String });
-
-const Options = computed(() => JSON.parse(props.chartOptions));
-</script>
 ```
 
 ---
@@ -338,7 +298,7 @@ export default function UserReport() {
   const [options, setOptions] = useState(null);
 
   useEffect(() => {
-    fetch("/reports/users")
+    fetch("/reports?page=users")
       .then(res => res.json())
       .then(data => {
         const chart = data.report.charts[0];
@@ -366,7 +326,7 @@ export default function UserReport() {
   <div id="container" style="width:100%; height:400px;"></div>
 
   <script>
-    fetch("/reports/users")
+    fetch("/reports?page=users")
       .then(res => res.json())
       .then(data => {
         const chart = data.report.charts[0];
