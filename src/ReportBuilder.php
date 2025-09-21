@@ -1,6 +1,6 @@
 <?php
 
-namespace HasanHawary\ReportGenerator;
+namespace HasanHawary\ReportBuilder;
 
 use Illuminate\Support\Str;
 use RuntimeException;
@@ -8,9 +8,6 @@ use Throwable;
 
 class ReportBuilder
 {
-    // Default namespace for package-provided report types
-    public const PATH = 'Types';
-
     protected array $config = [];
     protected ?string $namespace = null;
 

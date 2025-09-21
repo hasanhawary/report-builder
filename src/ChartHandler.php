@@ -1,6 +1,6 @@
 <?php
 
-namespace HasanHawary\ReportGenerator\Types;
+namespace HasanHawary\ReportBuilder;
 
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;

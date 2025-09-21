@@ -21,7 +21,7 @@
   },
   "autoload": {
     "psr-4": {
-      "HasanHawary\\ReportGenerator\\": "src/"
+      "HasanHawary\\ReportBuilder\\": "src/"
     }
   },
   "scripts": {
@@ -30,7 +30,7 @@
   "extra": {
     "laravel": {
       "providers": [
-        "HasanHawary\\ReportGenerator\\ReportGeneratorServiceProvider"
+        "HasanHawary\\ReportBuilder\\ReportBuilderServiceProvider"
       ]
     }
   },
