@@ -4,6 +4,12 @@ return [
     // Optional: set a global namespace for your app report classes
     'namespace' => 'App\\ReportBuilder',
 
+    // Translation settings for role display names
+    'translate' => [
+        'enabled' => true,
+        'file' => 'report'
+    ],
+
     // Example pages
     'pages' => [
         // Example pages
@@ -36,5 +42,5 @@ return [
                 ],
             ],
         ]
-    ]
+    ],
 ];

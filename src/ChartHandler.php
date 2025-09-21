@@ -75,9 +75,9 @@ class ChartHandler
         foreach ($data as $item) {
             foreach ((array)$item as $k => $v) {
                 if ($k === $groupByField) {
-                    $categories[] = resolveTrans($v, 'report');
+                    $categories[] = rb_resolve_trans($v, 'report');
                 } elseif (!Str::endsWith($k, '_id')) {
-                    $series[$k]['name'] = resolveTrans($k, 'report');
+                    $series[$k]['name'] = rb_resolve_trans($k, 'report');
                     $series[$k]['data'][] = (int)$v;
                 }
             }
@@ -107,7 +107,7 @@ class ChartHandler
         $series = $categories = [];
         foreach ($transformed as $k => $v) {
             if (!Str::endsWith($k, '_id')) {
-                $series[$k]['name'] = resolveTrans($k, 'report');
+                $series[$k]['name'] = rb_resolve_trans($k, 'report');
                 $series[$k]['data'][] = (int)$v;
             }
         }
@@ -174,11 +174,11 @@ class ChartHandler
     {
         $chart = $this->chart['pie'];
         $chart['series'][] = [
-            'name' => resolveTrans('count', 'report'),
+            'name' => rb_resolve_trans('count', 'report'),
             'colorByPoint' => true,
             'data' => collect($series)
                 ->map(fn($item) => [
-                    'name' => resolveTrans($item['name'], 'report'),
+                    'name' => rb_resolve_trans($item['name'], 'report'),
                     'y' => array_sum($item['data'])
                 ])
                 ->values()
