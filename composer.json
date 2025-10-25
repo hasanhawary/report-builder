@@ -1,47 +1,53 @@
 {
-  "name": "hasanhawary/report-builder",
-  "description": "A modular Laravel report builder for cards, charts, and tables.",
-  "type": "library",
-  "license": "MIT",
-  "keywords": [
-    "laravel",
-    "report",
-    "reports",
-    "charts",
-    "tables",
-    "analytics",
-    "dashboard"
-  ],
-  "authors": [
-    { "name": "Hasan Hawary", "role": "Developer" }
-  ],
-  "require": {
-    "php": ">8.0",
-    "illuminate/support": "^8.0 || ^9.0 || ^10.0 || ^11.0 || ^12.0"
-  },
-  "autoload": {
-    "psr-4": {
-      "HasanHawary\\ReportBuilder\\": "src/"
-    }
-  },
-  "scripts": {
-    "test": "../../vendor/bin/phpunit -c phpunit.xml"
-  },
-  "extra": {
-    "laravel": {
-      "providers": [
-        "HasanHawary\\ReportBuilder\\ReportBuilderServiceProvider"
-      ]
-    }
-  },
-  "homepage": "https://github.com/hasanhawary/report-builder",
-  "support": {
-    "issues": "https://github.com/hasanhawary/report-builder/issues",
-    "source": "https://github.com/hasanhawary/report-builder"
-  },
-  "config": {
-    "sort-packages": true
-  },
-  "minimum-stability": "dev",
-  "prefer-stable": true
+    "name": "hasanhawary/report-builder",
+    "description": "A modular Laravel report builder for cards, charts, and tables.",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "laravel",
+        "report",
+        "reports",
+        "charts",
+        "tables",
+        "analytics",
+        "dashboard"
+    ],
+    "authors": [
+        {
+            "name": "Hasan Hawary",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">8.0",
+        "illuminate/support": "^8.0 || ^9.0 || ^10.0 || ^11.0 || ^12.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "HasanHawary\\ReportBuilder\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "scripts": {
+        "test": "../../vendor/bin/phpunit -c phpunit.xml"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "HasanHawary\\ReportBuilder\\ReportBuilderServiceProvider"
+            ]
+        }
+    },
+    "homepage": "https://github.com/hasanhawary/report-builder",
+    "support": {
+        "issues": "https://github.com/hasanhawary/report-builder/issues",
+        "source": "https://github.com/hasanhawary/report-builder"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }

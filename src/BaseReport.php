@@ -1,6 +1,6 @@
 <?php
 
-namespace HasanHawary\ReportBuilder\Types;
+namespace HasanHawary\ReportBuilder;
 
 use Carbon\Carbon;
 use Exception;
@@ -41,7 +41,7 @@ abstract class BaseReport
         $this->chartHandler = new ChartHandler($filter['prefer_chart'] ?? null);
         $this->charts = $config['report'] ?? [];
         $this->mixedCharts = $this->filter['mixed_page'] ?? $config['report'] ?? [];
-        $this->title = $this->resolveTrans("{$filter['page']}_report");
+        $this->title = rb_resolve_trans("{$filter['page']}_report");
     }
 
     /**

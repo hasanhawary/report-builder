@@ -21,7 +21,7 @@ trait ResponsesTrait
         $cards = collect($cards)->map(fn($value, $key) => [
             'key' => $key,
             'value' => $value,
-            'label' => $this->resolveTrans($key),
+            'label' => rb_resolve_trans($key),
             'size' => $this->mixedCharts[$keyName]['size'] ?? $this->charts[$keyName]['size'] ?? ['cols' => '6', 'md' => '4', 'lg' => '4'],
         ])->values()->toArray();
 
@@ -50,35 +50,19 @@ trait ResponsesTrait
     private function prepareResponse($keyName, $response): array
     {
         $data = $this->mixedCharts[$keyName] ?? $this->charts[$keyName];
-        $data['title'] = $this->resolveTrans($data['title'] ?? $keyName);
+        $data['title'] = rb_resolve_trans($data['title'] ?? $keyName);
         $data['data'] = $response;
         $data['size'] = $this->mixedCharts[$keyName]['size'] ?? $this->charts[$keyName]['size'] ?? ['cols' => '12', 'md' => '6', 'lg' => '6'];
 
         if (@$data['type'] === 'table') {
             $data['columns'] = collect(array_keys((array)Arr::first($response)))->map(function ($item) {
                 return [
-                    'title' => $this->resolveTrans($item),
+                    'title' => rb_resolve_trans($item),
                     'key' => $item,
                 ];
             });
         }
 
         return $data;
-    }
-
-    public function resolveTrans($trans = '', $page = 'report', $lang = null, $snaked = true): ?string
-    {
-        if (empty($trans)) {
-            return '---';
-        }
-
-        app()->setLocale($lang ?? app()->getLocale());
-
-        $key = $snaked ? Str::snake($trans) : $trans;
-
-        if (function_exists('__')) {
-            return Str::startsWith(__("$page.$key"), "$page.") ? $trans : __("$page.$key");
-        }
-        return $trans;
     }
 }
