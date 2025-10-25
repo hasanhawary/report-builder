@@ -160,6 +160,13 @@ class ReportBuilder
      */
     protected function loadReportConfig($page): array
     {
-        return config("report.pages.$page");
+        $config = config("report.pages.{$page}");
+
+        if (!is_array($config) || empty($config)) {
+            throw new \RuntimeException("Configuration for report page [{$page}] is missing or invalid.");
+        }
+
+        return $config;
+
     }
 }
