@@ -78,7 +78,7 @@ class ChartHandler
                     $categories[] = rb_resolve_trans($v, 'report');
                 } elseif (!Str::endsWith($k, '_id')) {
                     $series[$k]['name'] = rb_resolve_trans($k, 'report');
-                    $series[$k]['data'][] = (int)$v;
+                    $series[$k]['data'][] = $v;
                 }
             }
         }
@@ -101,14 +101,17 @@ class ChartHandler
             unset($keys[array_search($groupByField, $keys, false)]);
             unset($item[$groupByField]);
 
-            $transformed[$preparedKey] = array_sum($item);
+            // Ensure $item contain numeric
+            $list = array_map(fn($i) => is_numeric($i) ? $i : 0, \Arr::wrap($item));
+
+            $transformed[$preparedKey] = array_sum($list);
         }
 
         $series = $categories = [];
         foreach ($transformed as $k => $v) {
             if (!Str::endsWith($k, '_id')) {
                 $series[$k]['name'] = rb_resolve_trans($k, 'report');
-                $series[$k]['data'][] = (int)$v;
+                $series[$k]['data'][] = $v;
             }
         }
 
