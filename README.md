@@ -63,7 +63,7 @@ return [
 ```php
 namespace App\Reports;
 
-use HasanHawary\ReportGenerator\Types\BaseReport;
+use HasanHawary\ReportBuilder\Types\BaseReport;
 
 class SalesReportBuilder extends BaseReport
 {
@@ -110,7 +110,7 @@ class SalesReportBuilder extends BaseReport
 3) Generate a response:
 
 ```php
-use HasanHawary\ReportGenerator\ReportBuilder;
+use HasanHawary\ReportBuilder\ReportBuilder;
 
 // Typical filter from request
 $filter = [
@@ -164,7 +164,7 @@ public function getMonthly(): array
     $rows = $q->get();
 
     // Prepare for charts (you can also use ChartHandler directly)
-    $chartData = (new \HasanHawary\ReportGenerator\Types\ChartHandler($this->filter['prefer_chart'] ?? null))
+    $chartData = (new \HasanHawary\ReportBuilder\Types\ChartHandler($this->filter['prefer_chart'] ?? null))
         ->resolve('month', $rows, $this->filter['prefer_chart'] ?? 'all');
 
     return [
@@ -306,7 +306,7 @@ return [
 ```php
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
-use HasanHawary\ReportGenerator\ReportBuilder;
+use HasanHawary\ReportBuilder\ReportBuilder;
 
 Route::get('/reports', function (Request $request) {
     $filter = $request->validate([

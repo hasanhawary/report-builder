@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace HasanHawary\ReportGenerator\Trait;
+namespace HasanHawary\ReportBuilder\Trait;
 
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;

@@ -1,10 +1,10 @@
 <?php
 
-namespace HasanHawary\ReportGenerator\Types;
+namespace HasanHawary\ReportBuilder\Types;
 
 use Carbon\Carbon;
 use Exception;
-use HasanHawary\ReportGenerator\Trait\ResponsesTrait;
+use HasanHawary\ReportBuilder\Trait\ResponsesTrait;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;

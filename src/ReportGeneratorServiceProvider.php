@@ -1,10 +1,10 @@
 <?php
 
-namespace HasanHawary\ReportGenerator;
+namespace HasanHawary\ReportBuilder;
 
 use Illuminate\Support\ServiceProvider;
 
-class ReportGeneratorServiceProvider extends ServiceProvider
+class ReportBuilderServiceProvider extends ServiceProvider
 {
     public function boot(): void
     {

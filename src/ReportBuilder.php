@@ -1,6 +1,6 @@
 <?php
 
-namespace HasanHawary\ReportGenerator;
+namespace HasanHawary\ReportBuilder;
 
 use Illuminate\Support\Str;
 use RuntimeException;

@@ -1,8 +1,8 @@
 <?php
 
-namespace HasanHawary\ReportGenerator\Facades;
+namespace HasanHawary\ReportBuilder\Facades;
 
-use HasanHawary\ReportGenerator\ReportBuilder;
+use HasanHawary\ReportBuilder\ReportBuilder;
 use Illuminate\Support\Facades\Facade;
 
 /**
@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Facade;
  *
  * @method static mixed response()
  * @method static mixed resolve(string $path, bool $mixed = false, ?array $filterOverride = null)
- * @see \HasanHawary\ReportGenerator\ReportBuilder
+ * @see \HasanHawary\ReportBuilder\ReportBuilder
  */
 class Report extends Facade
 {
