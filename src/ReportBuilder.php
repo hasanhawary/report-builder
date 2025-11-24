@@ -139,10 +139,7 @@ class ReportBuilder
     protected function buildReportPath(string $page): ?string
     {
         $base = ucfirst(Str::camel($page));
-        $candidates = [
-            $this->namespace . '\\' . $base . 'ReportBuilder',
-            $this->namespace . '\\' . $base . 'Report',
-        ];
+        $candidates = [$this->namespace . '\\' . $base . 'Report'];
 
         foreach ($candidates as $fqcn) {
             if (class_exists($fqcn)) {

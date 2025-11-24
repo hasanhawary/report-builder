@@ -27,11 +27,7 @@ abstract class BaseReport
      */
     public function __construct(public array $filter)
     {
-        try {
-            DB::statement('SET sql_mode = " "'); // Disable strict mode (optional)
-        } catch (\Throwable $e) {
-            // DB facade may not be available in non-Laravel environments
-        }
+        DB::statement('SET sql_mode = " "'); // Disable strict mode (optional)
 
         // Load the report configuration
         $config = $this->loadReportConfig($filter['page']);
@@ -122,8 +118,14 @@ abstract class BaseReport
     {
         $column = ($table ?? $this->table) . '.' . ($column ?? $this->dateColumn);
         $query->when(isset($this->filter['apply_date']) && $this->filter['apply_date'], function ($q) use ($column) {
-            $q->whereDate($column, '>=', $this->filter['start'] ?? null)
-                ->whereDate($column, '<=', $this->filter['end'] ?? null);
+
+            if(isset($this->filter['start']) && $this->filter['start']) {
+                $q->whereDate($column, '>=', $this->filter['start']);
+            }
+
+            if(isset($this->filter['end']) && $this->filter['end']) {
+                $q->whereDate($column, '<=', $this->filter['end']);
+            }
         });
     }
 
