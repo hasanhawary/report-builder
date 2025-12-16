@@ -159,7 +159,7 @@ class ChartHandler
         $chart = $this->chart[$chartType];
         $chart['xAxis']['categories'] = $categories;
         $chart['series'] = collect(array_values($series))->map(function ($item) {
-            $item['color'] = config('chart.setting.primary_color');
+            $item['color'] = config('chart.setting.primary_color', "rgba(var(--v-theme-primary),1)");
             return $item;
         })->toArray();
 
