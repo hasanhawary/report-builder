@@ -1,6 +1,10 @@
 <?php
 
 return [
+    'setting' => [
+        'primary_color' => 'rgba(var(--v-theme-primary),1)',
+    ],
+
     'high_chart' => [
         'bar' => [
             'chart' => [
@@ -160,5 +164,6 @@ return [
             ],
             'series' => []
         ]
+
     ]
 ];
