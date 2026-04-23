@@ -20,10 +20,5 @@ class ReportBuilderServiceProvider extends ServiceProvider
         // Merge package config
         $this->mergeConfigFrom(__DIR__ . '/../config/report.php', 'report');
         $this->mergeConfigFrom(__DIR__ . '/../config/chart.php', 'chart');
-
-         // Load helpers
-        if (file_exists(__DIR__ . '/helpers.php')) {
-            require_once __DIR__ . '/helpers.php';
-        }
     }
 }
