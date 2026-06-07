@@ -16,7 +16,7 @@ return [
 
     // Optional: set a global namespace for host application report classes.
     // You may also set a page-specific class via report.pages.{page}.class.
-    'namespace' => null,
+    'namespace' => 'App\\Tools\\Report',
 
     'defaults' => [
         'page' => null,

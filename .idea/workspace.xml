@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ac622d00-6b0c-41af-80da-69214312239c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/copilot.data.migration.ask2agent.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/laravel-idea-personal.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/laravel-idea.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/phpunit.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/report-builder.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-    </list>
+    <list default="true" id="ac622d00-6b0c-41af-80da-69214312239c" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -66,7 +55,7 @@
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/hasanhawary/report-builder.git&quot;,
+    &quot;url&quot;: &quot;git@github.com:hasanhawary/report-builder.git&quot;,
     &quot;accountId&quot;: &quot;8ab9dec2-77ec-4710-ac7e-b258ca48298e&quot;
   }
 }</component>
@@ -406,6 +395,7 @@
       <workItem from="1779187592466" duration="683000" />
       <workItem from="1780658851258" duration="8458000" />
       <workItem from="1780698459055" duration="12000" />
+      <workItem from="1780763671581" duration="841000" />
     </task>
     <servers />
   </component>
