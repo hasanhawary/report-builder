@@ -2,6 +2,7 @@
 
 namespace HasanHawary\ReportBuilder\Support;
 
+use Illuminate\Support\Str;
 use InvalidArgumentException;
 
 class ReportFilterResolver
@@ -31,7 +32,7 @@ class ReportFilterResolver
             throw new InvalidArgumentException('The report page is required.');
         }
 
-        return $page;
+        return Str::singular($page);
     }
 
     private function resolveChartType(array $filter): string

@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ac622d00-6b0c-41af-80da-69214312239c" name="Changes" comment="" />
+    <list default="true" id="ac622d00-6b0c-41af-80da-69214312239c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -396,6 +398,7 @@
       <workItem from="1780658851258" duration="8458000" />
       <workItem from="1780698459055" duration="12000" />
       <workItem from="1780763671581" duration="841000" />
+      <workItem from="1780843384684" duration="799000" />
     </task>
     <servers />
   </component>
